@@ -4,7 +4,7 @@
 ## 前沿
 用过多个app后，会发现tabbar中间添加凸起按钮，点击按钮各种动画，页面跳转要么是push 或者present 或各种自定义动画。查看系统控件发现，直接用系统tabBar无法完成功能，所以通过继承tabBar，通过kvc 替换controller中的tabBar,通过响应链处理超出tabBar部分按钮点击事件。
 
-![效果图.gif](![图一.png](http://upload-images.jianshu.io/upload_images/1828346-97cf7a08ac80f0dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240))
+![效果图.gif](![图一.png](https://github.com/liulichao20/TabBarDemo/blob/master/video.gif))
 
 ## 需求分析
 * tabbar有5个item，每个对应一个页面
@@ -48,14 +48,14 @@ override func layoutSubviews() {
 super.layoutSubviews()
 if isAddAction {
 return
-}else {
+    }else {
 isAddAction = true
-}
+    }
 for tabBarButton in subviews {
 if NSStringFromClass(tabBarButton.classForCoder) == "UITabBarButton",tabBarButton is UIControl {
 (tabBarButton as! UIControl).addTarget(self, action: #selector(whenBarButtonClicked(sender:)), for: .touchUpInside)
-}
-}
+        }
+    }
 }
 
 @objc func whenBarButtonClicked(sender:UIControl) {
@@ -63,8 +63,8 @@ for imageView in sender.subviews {
 if NSStringFromClass(imageView.classForCoder) == "UITabBarSwappableImageView"{
 tabBarImageAnimation(view: imageView)
 break
-}
-}
+        }
+    }
 }
 
 func tabBarImageAnimation(view:UIView) {
@@ -74,7 +74,7 @@ scaleAnimation.duration = 0.5
 scaleAnimation.values = [1.0 ,1.4, 0.9, 1.15, 0.95, 1.02, 1.0]
 scaleAnimation.calculationMode = .cubic
 view.layer.add(scaleAnimation, forKey: nil)
-}
+    }
 }
 
 ```
