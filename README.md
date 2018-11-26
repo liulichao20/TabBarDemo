@@ -4,7 +4,8 @@
 ## 前沿
 用过多个app后，会发现tabbar中间添加凸起按钮，点击按钮各种动画，页面跳转要么是push 或者present 或各种自定义动画。查看系统控件发现，直接用系统tabBar无法完成功能，所以通过继承tabBar，通过kvc 替换controller中的tabBar,通过响应链处理超出tabBar部分按钮点击事件。
 
-![效果图.gif](![图一.png](https://github.com/liulichao20/TabBarDemo/blob/master/video.gif))
+ 
+![效果图.gif](https://github.com/liulichao20/TabBarDemo/blob/master/video.gif)
 
 ## 需求分析
 * tabbar有5个item，每个对应一个页面
