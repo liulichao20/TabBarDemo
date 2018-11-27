@@ -14,6 +14,7 @@
 
 ## 效果实现
 * 自定义tabBar 
+
 继承UITabBar 创建PATabBar，添加中间凸出按钮,定义一个block 响应按钮点击事件。按钮需设置adjustsImageWhenHighlighted = false 去掉系统按下效果，设置按钮居中显示
 ```
 typealias PABaseBlock = ()->Void

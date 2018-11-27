@@ -39,6 +39,10 @@ class PATabBarViewController: UITabBarController{
         
         delegate = self
         configControllers()
+        customTabBar.addBadge(atIndex: 0, value: "")
+        customTabBar.addBadge(atIndex: 1, value: "1")
+        customTabBar.addBadge(atIndex: 3, value: "99+")
+        customTabBar.addBadge(atIndex: 4, value: "new")
     }
     
     func configControllers() {

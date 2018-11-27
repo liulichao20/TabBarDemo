@@ -73,4 +73,34 @@ class PATabBar: UITabBar {
         scaleAnimation.calculationMode = .cubic
         view.layer.add(scaleAnimation, forKey: nil)
     }
+    
+    func addBadge(atIndex index: Int,value:String?, badgeOffset: UIOffset = UIOffset(horizontal: 6.0, vertical: -22.0)) {
+        guard let value = value else {
+            if let badgeView = viewWithTag(1000 + index) as? PATabBarItemBadgeView {
+                badgeView.removeFromSuperview()
+            }
+            return
+        }
+        
+        if let badgeView = viewWithTag(1000 + index) as? PATabBarItemBadgeView {
+            badgeView.badgeValue = value
+            updateLayout(index: index,badgeView: badgeView,badgeOffset: badgeOffset)
+        }else {
+            let badgeView = PATabBarItemBadgeView()
+            badgeView.isUserInteractionEnabled = false
+            badgeView.badgeValue = value
+            badgeView.tag = 1000 + index
+            addSubview(badgeView)
+            updateLayout(index: index, badgeView: badgeView, badgeOffset: badgeOffset)
+        }
+    }
+    
+    func updateLayout(index: Int, badgeView: UIView, badgeOffset: UIOffset) {
+        let w = UIScreen.main.bounds.width/5
+        let h = self.frame.size.height
+        let itemSize = CGSize(width: w, height: h)
+        let size = badgeView.sizeThatFits(itemSize)
+        badgeView.frame = CGRect(origin: CGPoint(x:w*CGFloat(index) + w / 2.0 + badgeOffset.horizontal, y: h / 2.0 + badgeOffset.vertical), size: size)
+        badgeView.setNeedsLayout()
+    }
 }
