@@ -20,6 +20,7 @@ class PANavigationController: UINavigationController,UINavigationControllerDeleg
 //        navigationBar.barTintColor = UIColor.red
         print("did load")
         print("dev")
+        print("1.0")
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
