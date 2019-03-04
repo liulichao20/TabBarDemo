@@ -18,7 +18,7 @@ class PANavigationController: UINavigationController,UINavigationControllerDeleg
         
         //改变navBar的背景颜色
 //        navigationBar.barTintColor = UIColor.red
-     
+        print("did load")
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
