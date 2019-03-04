@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = PATabBarViewController()
         window?.makeKeyAndVisible()
         print("1.1.0")
-        print("1.0")
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black,
                                              NSAttributedString.Key.font:UIFont.systemFont(ofSize: 18)]
