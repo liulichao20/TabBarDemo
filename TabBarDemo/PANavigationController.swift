@@ -26,7 +26,7 @@ class PANavigationController: UINavigationController,UINavigationControllerDeleg
      print("view didload2")
         print("dev")
         print("dev2")
-
+        print("1.1.0")
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
